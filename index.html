@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,319 +7,453 @@
 <title>Supraja | Portfolio</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
 }
 
-html, body {
-  height: 100%;
+body{
+background:#f4f6fb;
+color:#333;
+display:flex;
+flex-direction:column;
+min-height:100vh;
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  color: #333;
+/* HEADER */
+
+header{
+background:linear-gradient(90deg,#1f2937,#2563eb);
+padding:15px 30px;
 }
 
-/* Header */
-header {
-  background: #1f2933;
-  padding: 15px 20px;
+nav{
+display:flex;
+justify-content:center;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+nav ul{
+display:flex;
+gap:25px;
+list-style:none;
 }
 
-nav h1 {
-  color: #fff;
+nav a{
+color:white;
+font-weight:bold;
+text-decoration:none;
+padding:8px 12px;
+border-radius:6px;
+transition:.3s;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+nav a:hover{
+background:white;
+color:#2563eb;
 }
 
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
+/* HERO */
+
+.hero{
+text-align:center;
+padding:90px 20px;
+background:linear-gradient(120deg,#38bdf8,#6366f1);
+color:white;
 }
 
-nav ul li a:hover {
-  text-decoration: underline;
+.hero h1{
+font-size:45px;
+margin-top:20px;
 }
 
-/* Main */
-main {
-  flex: 1;
+.hero p{
+font-size:20px;
+margin-top:10px;
 }
 
-/* Hero */
-.hero {
-  background: #e0f2fe;
-  text-align: center;
-  padding: 100px 20px;
+/* PROFILE */
+
+.profile-img{
+width:250px;
+height:300px;
+border-radius:20px;
+border:6px solid white;
+object-fit:cover;
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
 }
 
-.hero h1 {
-  font-size: 38px;
+/* SECTION */
+
+.section{
+display:none;
+padding:60px 30px;
+text-align:center;
+animation:fade 0.6s ease;
 }
 
-.hero p {
-  font-size: 18px;
-  margin-top: 10px;
-  color: #555;
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
 }
 
-/* Profile Image */
-.profile-img {
-  width: 340px;        /* larger size */
-  height: 420px;       /* portrait style */
-  border-radius: 20px; /* rounded box instead of circle */
-  object-fit: cover;
-  border: 5px solid #1f2933;
+/* HEADING STYLE */
+
+.section h2{
+font-size:32px;
+color:#2563eb;
+margin-bottom:30px;
+position:relative;
+display:inline-block;
 }
 
-
-/* Sections */
-.section {
-  display: none;
-  padding: 60px 20px;
-  text-align: center;
-  background: #f9fafb;
+.section h2::after{
+content:'';
+width:60%;
+height:4px;
+background:#38bdf8;
+position:absolute;
+left:20%;
+bottom:-8px;
+border-radius:10px;
 }
 
-.section h2 {
-  margin-bottom: 20px;
+/* ABOUT */
+
+.about-text{
+max-width:850px;
+margin:auto;
+font-size:18px;
+line-height:1.7;
 }
 
-/* About */
-.about-text {
-  max-width: 900px;
-  margin: auto;
-}
+/* SKILLS */
 
-/* Skills Table */
-.skills-table {
-  width: 90%;
-  max-width: 900px;
-  margin: auto;
-  border-collapse: collapse;
+.skills-table{
+margin:auto;
+border-collapse:collapse;
+width:90%;
+max-width:900px;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
 .skills-table th,
-.skills-table td {
-  border: 1px solid #ccc;
-  padding: 12px;
-  text-align: left;
+.skills-table td{
+padding:12px;
+border:1px solid #ddd;
 }
 
-.skills-table th {
-  background: #e0f2fe;
-  width: 35%;
+.skills-table th{
+background:#2563eb;
+color:white;
 }
 
-/* Projects */
-.projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+/* CARDS */
+
+.projects-container{
+display:flex;
+flex-wrap:wrap;
+gap:25px;
+justify-content:center;
 }
 
-.project {
-  width: 300px;
-  border: 1px solid #ccc;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: left;
-  background: #f9fafb;
+.project{
+width:300px;
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+transition:.3s;
+text-align:left;
 }
 
-.project h3 {
-  margin-bottom: 10px;
+.project:hover{
+transform:translateY(-8px);
+box-shadow:0 12px 30px rgba(0,0,0,0.15);
 }
 
-/* Contact */
-.contact-info p {
-  margin-bottom: 8px;
+.project h3{
+color:#2563eb;
+margin-bottom:10px;
 }
 
-/* Footer */
-footer {
-  background: #1f2933;
-  color: white;
-  text-align: center;
-  padding: 15px;
-}
-@media (max-width: 768px) {
-  .profile-img {
-    width: 90%;
-    height: auto;
-    max-width: 320px;
-  }
+/* BUTTON */
 
-  .hero {
-    padding: 60px 15px;
-  }
+.demo-btn{
+display:inline-block;
+margin-top:12px;
+padding:8px 14px;
+background:#2563eb;
+color:white;
+border-radius:6px;
+text-decoration:none;
+font-size:14px;
+transition:.3s;
 }
 
-
-/* Responsive */
-@media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .hero h1 {
-    font-size: 28px;
-  }
+.demo-btn:hover{
+background:#1e40af;
 }
+
+/* CONTACT */
+
+.contact-info p{
+margin:8px 0;
+font-size:18px;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:auto;
+background:#1f2937;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+nav ul{
+flex-wrap:wrap;
+gap:10px;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.profile-img{
+width:200px;
+height:250px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
 <header>
-  <nav>
-    
-    <ul>
-      <li><a href="#" onclick="showHome()">Home</a></li>
-      <li><a href="#" onclick="showSection('about')">About</a></li>
-      <li><a href="#" onclick="showSection('skills')">Skills</a></li>
-      <li><a href="#" onclick="showSection('projects')">Projects</a></li>
-      <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-    </ul>
-  </nav>
+<nav>
+<ul>
+<li><a href="#" onclick="showHome()">Home</a></li>
+<li><a href="#" onclick="showSection('about')">About</a></li>
+<li><a href="#" onclick="showSection('education')">Education</a></li>
+<li><a href="#" onclick="showSection('skills')">Skills</a></li>
+<li><a href="#" onclick="showSection('projects')">Projects</a></li>
+<li><a href="#" onclick="showSection('experience')">Experience</a></li>
+<li><a href="#" onclick="showSection('achievements')">Achievements</a></li>
+<li><a href="#" onclick="showSection('contact')">Contact</a></li>
+</ul>
+</nav>
 </header>
 
 <main>
 
-<!-- Home / Hero -->
 <section class="hero" id="home">
-  <img src="profile.jpg" alt="Supraja Photo" class="profile-img">
-  <h1>Supraja</h1>
-  <p>Information Science & Engineering Student</p>
-  <p>Advanced web system Engineering Intern</p>
+<img src="profile.jpg" class="profile-img">
+<h1>Supraja</h1>
+<p>B.E in Information Science & Engineering Student</p>
 </section>
 
-<!-- About -->
 <section id="about" class="section">
-  <h2>About Me</h2>
-  <div class="about-text">
-    <p>
-      Aspiring Full Stack Developer with strong experience in Django, React, and MERN stack development.
-      Passionate about building scalable web applications and leveraging AI/ML models to solve real-world
-      problems. Proven ability through internships, projects, and hackathons with strong collaboration
-      and problem-solving skills.
-    </p>
-  </div>
+<h2>About Me</h2>
+<div class="about-text">
+<p>
+Aspiring Full Stack Developer with experience in Django, React, and MERN stack development.
+Passionate about building scalable web applications and applying AI/ML solutions to real-world problems.
+Strong problem-solving skills with internship and hackathon experience.
+</p>
+</div>
+</section>
+<section id="education" class="section">
+
+<h2>Education</h2>
+
+<div class="projects-container">
+
+<div class="project">
+
+<h3>Bachelor of Engineering in Information Science and Engineering</h3>
+
+<p style="margin-bottom:12px;"><b>2022 – 2026</b></p>
+
+<p style="margin-bottom:12px;">Yenepoya Institute of Technology, Mangaluru</p>
+
+<p style="margin-bottom:12px;"><b>CGPA:</b> 9.08</p>
+
+</div>
+
+</div>
+
 </section>
 
-<!-- Skills -->
 <section id="skills" class="section">
-  <h2>Skills</h2>
-  <table class="skills-table">
-    <tr>
-      <th>Programming Languages</th>
-      <td>Python, Java, C++, JavaScript, SQL</td>
-    </tr>
-    <tr>
-      <th>Web Development</th>
-      <td>HTML, CSS, React.js, Node.js, REST APIs</td>
-    </tr>
-    <tr>
-      <th>Database Management</th>
-      <td>MySQL, MongoDB, PostgreSQL</td>
-    </tr>
-    <tr>
-      <th>Data Science & Analytics</th>
-      <td>Machine Learning, Pandas, NumPy, Power BI</td>
-    </tr>
-    <tr>
-      <th>Tools & Platforms</th>
-      <td>Git, GitHub, VS Code, Jupyter Notebook</td>
-    </tr>
-    <tr>
-      <th>Soft Skills</th>
-      <td>Problem-Solving, Communication, Teamwork, Critical Thinking, Adaptability</td>
-    </tr>
-  </table>
+<h2>Skills</h2>
+
+<table class="skills-table">
+
+<tr><th>Programming Languages</th><td>Python, Java, JavaScript</td></tr>
+<tr><th>Frontend</th><td>HTML, CSS, React.js</td></tr>
+<tr><th>Backend</th><td>Django, Node.js, REST APIs</td></tr>
+<tr><th>Database</th><td>MySQL, MongoDB, PostgreSQL</td></tr>
+<tr><th>Tools</th><td>Git, GitHub, VS Code, Jupyter</td></tr>
+<tr><th>Concepts</th><td>OOP, Full Stack Development</td></tr>
+
+</table>
 </section>
 
-<!-- Projects -->
 <section id="projects" class="section">
-  <h2>Projects</h2>
-  <div class="projects-container">
 
-    <div class="project">
-      <h3>AI-Powered Genetic Risk Predictor</h3>
-      <p>Machine learning model using Python and Scikit-learn to predict lifestyle disease risks with 92% accuracy.</p>
-    </div>
+<h2>Projects</h2>
 
-    <div class="project">
-      <h3>Travel Chatbot Development</h3>
-      <p>Python-Dialogflow chatbot integrated with real-time APIs for personalized travel assistance.</p>
-    </div>
+<div class="projects-container">
 
-    <div class="project">
-      <h3>Mobile Shop Application</h3>
-      <p>Django-React full-stack e-commerce app with authentication, cart, and admin dashboard.</p>
-    </div>
+<div class="project">
+<h3>AI Lifestyle Disease Predictor</h3>
+<p style="margin-bottom:12px;">Tech Stack: Python, Flask, Scikit-learn, Pandas, NumPy, HTML, CSS</p>
 
-    <div class="project">
-      <h3>Multi-Modal Steganography</h3>
-      <p>Deep learning system using CNNs and autoencoders to hide and extract data across media.</p>
-    </div>
+<p>
+ Developed a machine learning system for predicting risks of lifestyle diseases such as diabetes, hypertension,
+and depression using health indicators including BMI, sleep patterns, diet, and physical activity. Provided
+real-time predictions and personalized health recommendations for users.
+</p>
+<a class="demo-btn" href="https://ai-lifestyle-disease-predictor.onrender.com/" target="_blank">Live Demo</a>
+</div>
 
-    <div class="project">
-      <h3>Online Banking System</h3>
-      <p>Secure Django-PostgreSQL app supporting real-time money transfers and transaction tracking.</p>
-    </div>
+<div class="project">
+<h3>Deep Learning Multi-Modal Steganography</h3>
+<p style="margin-bottom:12px;">Tech Stack: CNN, LSTM, Autoencoder, PyTorch, Flask, OpenCV, MongoDB</p>
 
-  </div>
+<p>
+Built a deep learning system that securely embedded and extracted confidential data within text, image,
+audio, and video files using CNN, Autoencoder, and LSTM architectures. Integrated a user interface for media
+upload and secure data handling. 
+</p>
+<a class="demo-btn" href="https://deep-learning-based-multi-modal.onrender.com/" target="_blank">Live Demo</a>
+</div>
+
+<div class="project">
+<h3>Mobile Shop Web Application</h3>
+<p style="margin-bottom:12px;">Tech Stack: Python, Django, React.js, REST APIs, PostgreSQL</p>
+
+<p>
+Developed a full-stack e-commerce platform enabling users to browse and search mobile products through a
+responsive interface. Implemented REST APIs, authentication, and optimized database queries, improving
+system efficiency by 30%.
+</p>
+<a class="demo-btn" href="https://mobileshopmain-4.onrender.com/" target="_blank">Live Demo</a>
+</div>
+
+</div>
+
 </section>
 
-<!-- Contact -->
+<section id="experience" class="section">
+
+<h2>Experience</h2>
+
+<div class="projects-container">
+
+<div class="project">
+<h3>AI Intern — Academor</h3>
+<p style="margin-bottom:12px;">Sep 2023 – Oct 2023</p>
+<p>Improved machine learning models using TensorFlow and Scikit-learn through feature engineering and
+hyperparameter tuning, increasing prediction accuracy by 15% and reducing training time by 20%.</p>
+</div>
+
+<div class="project">
+<h3>Python Full Stack Intern — MicroDegree</h3>
+<p style="margin-bottom:12px;">Jun 2025 – Aug 2025</p>
+<p> Built scalable web applications using Django, React, and PostgreSQL; implemented 5+ REST APIs and
+optimized database queries, improving system efficiency by 35%.</p>
+</div>
+
+<div class="project">
+<h3> Advanced Web Systems Engineering Intern — SWIZOSOFT</h3>
+<p style="margin-bottom:12px;">Feb 2026 – Present</p>
+<p>Designed scalable web applications by integrating front-end interfaces with backend services and REST APIs.
+Improved performance, security, and reliability across projects.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="achievements" class="section">
+
+<h2>Achievements</h2>
+
+<div class="about-text">
+<p>
+ National Level Hackathon Participant – Project Omega<br><br>
+Yenepoya University, Kulur.<br><br>
+Secured <b>8th place among 23 teams</b> by presenting an
+AI-based Genetic Risk Prediction solution.
+</p>
+</div>
+
+</section>
+
 <section id="contact" class="section">
-  <h2>Contact Me</h2>
-  <div class="contact-info">
-    <p>📞 +91 8904191042</p>
-    <p>📧 suprajashetty84@gmail.com</p>
-    <p>🔗 LinkedIn: linkedin.com/in/supraja-shetty-982324268</p>
-    <p>💻 GitHub: github.com/supraja-shetty</p>
-  </div>
+
+<h2>Contact</h2>
+
+<div class="contact-info">
+
+<p>📞 <a href="tel:+918904191042">+91 8904191042</a></p>
+
+<p>📧 
+<a href="mailto:suprajashetty84@gmail.com">
+suprajashetty84@gmail.com
+</a>
+</p>
+
+<p>🔗 
+<a href="https://linkedin.com/in/supraja-shetty-982324268" target="_blank">
+https://linkedin.com/in/supraja-shetty-982324268
+</a>
+</p>
+
+<p>💻 
+<a href="https://github.com/supraja-shetty" target="_blank">https://github.com/supraja-shetty
+</a>
+</p>
+
+</div>
+
 </section>
 
 </main>
 
 <footer>
-  <p>© 2026 Supraja | All Rights Reserved</p>
+<p>© 2026 Supraja | Portfolio</p>
 </footer>
 
 <script>
-function showSection(id) {
-  document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-  document.getElementById('home').style.display = 'none';
-  document.getElementById(id).style.display = 'block';
+
+function showSection(id){
+document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+document.getElementById('home').style.display='none';
+document.getElementById(id).style.display='block';
 }
 
-function showHome() {
-  document.querySelectorAll('.section').forEach(s => s.style.display = 'none');
-  document.getElementById('home').style.display = 'block';
+function showHome(){
+document.querySelectorAll('.section').forEach(s=>s.style.display='none');
+document.getElementById('home').style.display='block';
 }
+
 </script>
 
 </body>
 </html>
+
 
